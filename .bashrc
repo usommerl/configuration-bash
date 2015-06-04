@@ -70,3 +70,11 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE="ls:ls *:l:ll:h:h *:history:history *:cd:cd -:pwd:exit:date:* --help"
 
 # vim: set filetype=sh:
+precmd() {
+    echo $(pwd) > $HOME/.urxvt/start_directory
+}
+
+# For preexec and precmd hooks
+if [ -e ~/.bash/bash-preexec/bash-preexec.sh ]; then
+   source  ~/.bash/bash-preexec/bash-preexec.sh
+fi

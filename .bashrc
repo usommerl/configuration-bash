@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
+# vim: set filetype=sh:
+
 # Load shared configuration for bash/zsh
 # Requires the shell-commons module
-# (see: )
 for name in 'variables' 'aliases' 'functions' 'ssh-login'; do
     if [ -e ~/.bash/shell-commons/$name ]; then
         source ~/.bash/shell-commons/$name
@@ -72,7 +73,6 @@ export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoreboth
 export HISTIGNORE="ls:ls *:l:ll:h:h *:history:history *:cd:cd -:pwd:exit:date:* --help"
 
-# vim: set filetype=sh:
 precmd() {
     echo $(pwd) > $HOME/.urxvt/start_directory
 }

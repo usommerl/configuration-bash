@@ -73,6 +73,11 @@ export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoreboth
 export HISTIGNORE="ls:ls *:l:ll:h:h *:history:history *:cd:cd -:pwd:exit:date:* --help"
 
+# enable bash completion
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
 precmd() {
     echo $(pwd) > $HOME/.urxvt/start_directory
 }

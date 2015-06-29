@@ -69,7 +69,7 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 # History
 export HISTSIZE=32768               # Larger bash history (allow 32³ entries; default is 500)
 export HISTFILESIZE=$HISTSIZE
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoreboth
 export HISTIGNORE="ls:ls *:l:ll:h:h *:history:history *:cd:cd -:pwd:exit:date:* --help"
 
 # vim: set filetype=sh:

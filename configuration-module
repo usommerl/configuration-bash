@@ -7,8 +7,10 @@ MODULE=bash
 
 function INSTALL() {
     local _file=.${MODULE}rc
+    local _file_git_prompt=.git-prompt-colors.sh
     link $CURRENT_DIRECTORY/$_file ~/$_file
     link $CURRENT_DIRECTORY ~/.$MODULE
+    link $CURRENT_DIRECTORY/$_file_git_prompt ~/$_file_git_prompt
     setupSubmodules
 }
 

@@ -62,16 +62,16 @@ function translateInVT100ColorCode() {
 VT100ColorCode=$(translateInVT100ColorCode $(cursorColor))
 
 # Prompt
-parse_git_branch() {
-      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-  }
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\$ '
+GIT_PROMPT_START='${debian_chroot:+($debian_chroot)}\[\033[00;33m\]\u@\h\[\033[00m\]:\[\033[00;00m\]\w'
+GIT_PROMPT_END='\$ '
+GIT_PROMPT_THEME=Custom
+source ~/.bash/bash-git-prompt/gitprompt.sh
 
 # History
 export HISTSIZE=32768               # Larger bash history (allow 32³ entries; default is 500)
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoreboth
-export HISTIGNORE="ls:ls *:l:ll:h:h *:history:history *:cd:cd -:pwd:exit:date:* --help"
+#export HISTIGNORE="ls:ls *:l:ll:h:h *:history:history *:cd:cd -:pwd:exit:date:* --help"
 
 # enable bash completion
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then

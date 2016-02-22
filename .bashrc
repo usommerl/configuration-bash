@@ -86,3 +86,5 @@ precmd() {
 if [ -e ~/.bash/bash-preexec/bash-preexec.sh ]; then
    source  ~/.bash/bash-preexec/bash-preexec.sh
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

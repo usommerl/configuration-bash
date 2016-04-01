@@ -71,6 +71,7 @@ source ~/.bash/bash-git-prompt/gitprompt.sh
 export HISTSIZE=32768               # Larger bash history (allow 32³ entries; default is 500)
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoreboth
+export HISTTIMEFORMAT="%d.%m.%Y %T  "
 #export HISTIGNORE="ls:ls *:l:ll:h:h *:history:history *:cd:cd -:pwd:exit:date:* --help"
 
 # enable bash completion

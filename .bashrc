@@ -61,7 +61,17 @@ function translateInVT100ColorCode() {
 VT100ColorCode=$(translateInVT100ColorCode $(cursorColor))
 
 # Prompt
-PS1="$VT100ColorCode>\[\e[m\] \u@\h \W\$ "
+export PROMPT_COMMAND=__prompt_command 
+function __prompt_command() {
+    local rc="$?"
+    PS1="${VT100ColorCode}"
+
+    if [ ${rc} != 0 ]; then
+        PS1+="${rc}\n"
+    fi
+
+    PS1+=">\[\e[m\] \u@\h \W\$ "
+}
 
 # History
 export HISTSIZE=32768               # Larger bash history (allow 32³ entries; default is 500)

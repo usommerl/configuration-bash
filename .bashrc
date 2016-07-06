@@ -62,7 +62,7 @@ function translateInVT100ColorCode() {
 VT100ColorCode=$(translateInVT100ColorCode $(cursorColor))
 
 # Prompt
-GIT_PROMPT_START='${debian_chroot:+($debian_chroot)}\[\033[00;33m\]\u@\h\[\033[00m\]:\[\033[00;00m\]\w'
+GIT_PROMPT_START='${debian_chroot:+($debian_chroot)}\[\033[00;33m\]> \[\033[00m\]\u@\h:\[\033[00;00m\]\w'
 GIT_PROMPT_END='\$ '
 GIT_PROMPT_THEME=Custom
 source ~/.bash/bash-git-prompt/gitprompt.sh

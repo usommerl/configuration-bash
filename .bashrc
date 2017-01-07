@@ -79,4 +79,5 @@ export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
 export HISTIGNORE="ls:ls *:l:ll:h:h *:history:history *:cd:cd -:pwd:exit:date:* --help"
 
-# vim: set filetype=sh:
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.bashhub/bashhub.sh ] && source ~/.bashhub/bashhub.sh

@@ -4,7 +4,7 @@
 
 # Load shared configuration for bash/zsh
 # Requires the shell-commons module
-for name in 'variables.sh' 'aliases.sh' 'functions.sh' 'functions_movex_related.sh' 'ssh-login'; do
+for name in 'variables.sh' 'aliases.sh' 'functions.sh' 'ssh-login'; do
     if [ -e ~/.bash/shell-commons/$name ]; then
         source ~/.bash/shell-commons/$name
     fi

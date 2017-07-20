@@ -88,3 +88,4 @@ if [ -e ~/.bash/bash-preexec/bash-preexec.sh ]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.bashhub/bashhub.sh ] && source ~/.bashhub/bashhub.sh

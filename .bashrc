@@ -90,6 +90,12 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/.bashhub/bashhub.sh ] && source ~/.bashhub/bashhub.sh
 
+if [ -f ~/.zlua-src/z.lua ]; then
+  export _ZL_CMD=zz
+  eval "$(lua ~/.zlua-src/z.lua --init bash enhanced once fzf)"
+  alias z="$_ZL_CMD -I"
+fi
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

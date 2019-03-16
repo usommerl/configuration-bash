@@ -14,13 +14,11 @@ GIT_PROMPT_END='\$ '
 GIT_PROMPT_THEME=Custom
 source ~/.bash/bash-git-prompt/gitprompt.sh
 
-# History
 export HISTSIZE=32768               # Larger bash history (allow 32³ entries; default is 500)
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoreboth
 #export HISTIGNORE="ls:ls *:l:ll:h:h *:history:history *:cd:cd -:pwd:exit:date:* --help"
 
-# enable bash completion
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   source /etc/bash_completion
 fi
@@ -40,7 +38,7 @@ if [ -f ~/.zlua-src/z.lua ]; then
 fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # vim: set filetype=sh:

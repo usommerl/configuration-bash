@@ -2,3 +2,9 @@
 	path = shell-commons
 	url = https://github.com/usommerl/shell-commons.git
 	branch = master
+[submodule "bash-preexec"]
+	path = bash-preexec
+	url = https://github.com/rcaloras/bash-preexec.git
+[submodule "bash-git-prompt"]
+	path = bash-git-prompt
+	url = https://github.com/magicmonty/bash-git-prompt.git

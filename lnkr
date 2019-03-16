@@ -3,6 +3,7 @@
 install() {
   link "$REPOSITORY_ROOT/.bashrc" ~/.bashrc
   link "$REPOSITORY_ROOT" ~/.bash
+  link "$REPOSITORY_ROOT/.git-prompt-colors.sh" ~/.git-prompt-colors.sh
   setup_submodules
 }
 

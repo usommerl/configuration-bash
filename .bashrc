@@ -7,53 +7,6 @@ done
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-cursorColor() {
-  if [ -n "$DISPLAY" ] && command -v appres &> /dev/null; then
-    echo $(appres URxvt | grep -e cursorColor | cut -f 2)
-  fi
-}
-
-translateInVT100ColorCode() {
-  case $1 in
-     0 )
-        echo '\[\e[30m\]' ;;
-     1 )
-        echo '\[\e[31m\]' ;;
-     2 )
-        echo '\[\e[32m\]' ;;
-     3 )
-        echo '\[\e[33m\]' ;;
-     4 )
-        echo '\[\e[34m\]' ;;
-     5 )
-        echo '\[\e[35m\]' ;;
-     6 )
-        echo '\[\e[36m\]' ;;
-     7 )
-        echo '\[\e[37m\]' ;;
-     8 )
-        echo '\[\e[1;30m\]' ;;
-     9 )
-        echo '\[\e[1;31m\]' ;;
-    10 )
-        echo '\[\e[1;32m\]' ;;
-    11 )
-        echo '\[\e[1;33m\]' ;;
-    12 )
-        echo '\[\e[1;34m\]' ;;
-    13 )
-        echo '\[\e[1;35m\]' ;;
-    14 )
-        echo '\[\e[1;36m\]' ;;
-    15 )
-        echo '\[\e[1;37m\]' ;;
-     * )
-        echo '\[\e[1;31m\]' ;;
-  esac
-}
-
-VT100ColorCode=$(translateInVT100ColorCode $(cursorColor))
-
 # Prompt
 unset __GIT_PROMPT_DIR
 GIT_PROMPT_START='${debian_chroot:+($debian_chroot)}\[\033[00;33m\]> \[\033[00m\]\u@\h:\[\033[00;00m\]\w'

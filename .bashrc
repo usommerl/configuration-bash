@@ -24,7 +24,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 precmd() {
-  echo $(pwd) > $HOME/.urxvt/start_directory
+  echo $(pwd) > $HOME/.config/alacritty/start_directory
 }
 
 [ -e ~/.bash/bash-preexec/bash-preexec.sh ] && source  ~/.bash/bash-preexec/bash-preexec.sh

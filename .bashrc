@@ -41,4 +41,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+[ -f ~/.local/google-cloud-sdk/path.bash.inc ] && source ~/.local/google-cloud-sdk/path.bash.inc
+[ -f ~/.local/google-cloud-sdk/completion.bash.inc ] && source ~/.local/google-cloud-sdk/completion.bash.inc
+
 # vim: set filetype=sh:

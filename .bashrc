@@ -44,4 +44,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s ~/.local/google-cloud-sdk/path.bash.inc ] && source ~/.local/google-cloud-sdk/path.bash.inc
 [ -s ~/.local/google-cloud-sdk/completion.bash.inc ] && source ~/.local/google-cloud-sdk/completion.bash.inc
 
+command -v kubectl >/dev/null 2>&1 && source <(kubectl completion bash) && complete -F __start_kubectl k
 # vim: set filetype=sh:

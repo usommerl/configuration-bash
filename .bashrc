@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 for name in 'variables.sh' 'aliases.sh' 'functions.sh' 'ssh-login'; do
-  [ -e ~/.bash/shell-commons/$name ] && source ~/.bash/shell-commons/$name
+  [ -s ~/.bash/shell-commons/$name ] && source ~/.bash/shell-commons/$name
 done
 
 # If not running interactively, don't do anything
@@ -19,7 +19,7 @@ export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoreboth
 #export HISTIGNORE="ls:ls *:l:ll:h:h *:history:history *:cd:cd -:pwd:exit:date:* --help"
 
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+if [ -s /etc/bash_completion ] && ! shopt -oq posix; then
   source /etc/bash_completion
 fi
 
@@ -27,11 +27,11 @@ precmd() {
   echo $(pwd) > $HOME/.config/alacritty/start_directory
 }
 
-[ -e ~/.bash/bash-preexec/bash-preexec.sh ] && source  ~/.bash/bash-preexec/bash-preexec.sh
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f ~/.bashhub/bashhub.sh ] && source ~/.bashhub/bashhub.sh
+[ -s ~/.bash/bash-preexec/bash-preexec.sh ] && source  ~/.bash/bash-preexec/bash-preexec.sh
+[ -s ~/.fzf.bash ] && source ~/.fzf.bash
+[ -s ~/.bashhub/bashhub.sh ] && source ~/.bashhub/bashhub.sh
 
-if [ -f ~/.zlua-src/z.lua ]; then
+if [ -s ~/.zlua-src/z.lua ]; then
   export _ZL_CMD=zz
   eval "$(lua ~/.zlua-src/z.lua --init bash enhanced once fzf)"
   alias z="$_ZL_CMD -I"
@@ -41,7 +41,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-[ -f ~/.local/google-cloud-sdk/path.bash.inc ] && source ~/.local/google-cloud-sdk/path.bash.inc
-[ -f ~/.local/google-cloud-sdk/completion.bash.inc ] && source ~/.local/google-cloud-sdk/completion.bash.inc
+[ -s ~/.local/google-cloud-sdk/path.bash.inc ] && source ~/.local/google-cloud-sdk/path.bash.inc
+[ -s ~/.local/google-cloud-sdk/completion.bash.inc ] && source ~/.local/google-cloud-sdk/completion.bash.inc
 
 # vim: set filetype=sh:

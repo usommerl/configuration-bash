@@ -17,7 +17,6 @@ GIT_PROMPT_THEME=Custom
 export HISTSIZE=32768               # Larger bash history (allow 32³ entries; default is 500)
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoreboth
-#export HISTIGNORE="ls:ls *:l:ll:h:h *:history:history *:cd:cd -:pwd:exit:date:* --help"
 
 if [ -s /etc/bash_completion ] && ! shopt -oq posix; then
   source /etc/bash_completion

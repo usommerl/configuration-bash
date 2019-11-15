@@ -8,3 +8,6 @@
 [submodule "bash-git-prompt"]
 	path = bash-git-prompt
 	url = https://github.com/magicmonty/bash-git-prompt.git
+[submodule "z.lua"]
+	path = z.lua
+	url = https://github.com/skywind3000/z.lua

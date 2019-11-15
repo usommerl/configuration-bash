@@ -30,9 +30,9 @@ precmd() {
 [ -s ~/.fzf.bash ] && source ~/.fzf.bash
 [ -s ~/.bashhub/bashhub.sh ] && source ~/.bashhub/bashhub.sh
 
-if [ -s ~/.zlua-src/z.lua ]; then
+if [ -s ~/.bash/z.lua/z.lua ]; then
   export _ZL_CMD=zz
-  eval "$(lua ~/.zlua-src/z.lua --init bash enhanced once fzf)"
+  eval "$(lua ~/.bash/z.lua/z.lua --init bash enhanced once fzf)"
   alias z="$_ZL_CMD -I"
 fi
 

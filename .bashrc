@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for name in 'variables.sh' 'aliases.sh' 'functions.sh' 'ssh-login'; do
+for name in 'variables.sh' 'aliases.sh' 'functions.sh'; do
   [ -s ~/.bash/shell-commons/$name ] && source ~/.bash/shell-commons/$name
 done
 
